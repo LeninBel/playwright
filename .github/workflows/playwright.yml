@@ -6,7 +6,7 @@ on:
     branches: [ main, master ]
 
 env:
-  env_var: ${{ vars.BASE_URL }}
+  BASE_URL: ${{ vars.BASE_URL }}
 jobs:
   test:
     environment: CI
