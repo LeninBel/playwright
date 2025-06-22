@@ -4,13 +4,16 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+
+env:
+  env_var: ${{ vars.BASE_URL }}
 jobs:
   test:
     environment: CI
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
-    - run: echo ${{ secrets.BASE_URL }}
+    - run: echo ${{ env.BASE_URL }}
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
       with:
