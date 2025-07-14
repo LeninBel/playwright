@@ -12,4 +12,8 @@ export abstract class BasePage {
     get url() {
         return this.page.url();
     }
+
+    protected async waitForNavigation(url: string) {
+        await this.page.waitForURL(url);
+    }
 }
