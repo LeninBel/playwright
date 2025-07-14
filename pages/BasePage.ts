@@ -1,11 +1,15 @@
-import { Page } from '@playwright/test'
+import { Page } from '@playwright/test';
 
 export abstract class BasePage {
-    protected page: Page
+    protected page: Page;
 
     constructor(page: Page) {
-        this.page = page
+        this.page = page;
     }
 
-    abstract navigate()
+    abstract navigate(): Promise<void>;
+
+    get url() {
+        return this.page.url();
+    }
 }
