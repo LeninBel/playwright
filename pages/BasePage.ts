@@ -1,12 +1,11 @@
-import { Page } from "@playwright/test";
+import { Page } from '@playwright/test'
 
 export abstract class BasePage {
-
-    protected page;
+    protected page: Page
 
     constructor(page: Page) {
         this.page = page
     }
 
- abstract navigate();
+    abstract navigate()
 }
